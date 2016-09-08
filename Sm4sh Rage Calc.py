@@ -1,3 +1,5 @@
+# All code by DuckDuckPony (Bryan Becker) 2016. Formulas taken from www.ssbwiki.com. 
+
 from Tkinter import *
 import math
 from charDict import weights
@@ -7,7 +9,7 @@ master.configure(bg="#242424")
 master.title("Smash 4 Rage Calculator")
 
 #create labels
-notesLabel = Label(master, text="Welcome to the Smash 4 Rage Calculator! This is a tiny utility that lets you know what percentage is being simulated on your opponent when you hit them while under the effects of rage. For example, if you hit Mario with Pac-Man's F-air while he has 130% damage, and you have 110%, the knockback he receives is the nearly the same as if you hit him at 147% while you had no rage at all. \nSince testing effects of rage requires you to be outside of training mode and is therefore super time consuming, this could be helpful for determining whether or not kill confirms or combos are still true at certain percents/amounts of rage, saving hours of vs. mode testing. \nAll move data can be found on http://kuroganehammer.com/Smash4.", bg="#242424", fg="#fdb3b3", highlightbackground="#2d2d2d", wraplength=950, justify=CENTER).grid(row=0, columnspan=4, sticky=W, pady=10, padx=15)
+notesLabel = Label(master, text="Welcome to the Smash 4 Rage Calculator! This is a tiny utility that lets you know what percentage is being simulated on your opponent when you hit them while under the effects of rage. For example, if you hit Mario with Pac-Man's F-air while he has 130% damage, and you have 110%, the knockback he receives is the nearly the same as if you hit him at 147% while you had no rage at all. \nSince testing effects of rage requires you to be outside of training mode and is therefore super time consuming, this could be helpful for determining whether or not kill confirms or combos are still true at certain percents/amounts of rage. \nAll move data can be found on http://kuroganehammer.com/Smash4.", bg="#242424", fg="#fdb3b3", highlightbackground="#2d2d2d", wraplength=950, justify=CENTER).grid(row=0, columnspan=4, sticky=W, pady=10, padx=15)
 
 charLabel = Label(master, text="Opponent's Character:", bg="#242424", fg="#a6d0f0", highlightbackground="#2d2d2d").grid(row=1, sticky=W, pady=5, padx=15)
 damageLabel = Label(master, text="Opponent's Percentage:", bg="#242424", fg="#a6d0f0", highlightbackground="#2d2d2d").grid(row=2, sticky=W, pady=5, padx=15)
@@ -20,7 +22,7 @@ kbBaseLabel = Label(master, text="Base Knockback:", bg="#242424", fg="#a6d0f0", 
 kbBaseDescLabel = Label(master, text="On KuroganeHammer.com, this is BKB/WBKB value.", bg="#242424", fg="#ffe699", highlightbackground="#2d2d2d").grid(row=6, column=3, sticky=W, pady=5, padx=15)
 resultLabel = Label(master, text="", bg="#363636", fg="#a6d0f0", highlightbackground="#2d2d2d")
 resultLabel.grid(row=8, sticky=W, padx=15, columnspan=2, pady=5)
-copyLabel = Label(master, text="All code by DuckDuckPony, using Python/Tkinter. Follow me on Twitter @DuckDuckBryan. Thanks for checking this out!", bg="#242424", fg="#9fffcc", highlightbackground="#2d2d2d", wraplength=950, justify=CENTER, font=("TkDefaultFont", 10)).grid(row=9, columnspan=4, sticky=W, pady=10, padx=15)
+copyLabel = Label(master, text="All code by DuckDuckPony, using Python/Tkinter. Formulas for knockback/rage found on www.ssbwiki.com. Follow me on Twitter @DuckDuckBryan. Thanks for checking this out!", bg="#242424", fg="#9fffcc", highlightbackground="#2d2d2d", wraplength=950, justify=CENTER, font=("TkDefaultFont", 10)).grid(row=9, columnspan=4, sticky=W, pady=10, padx=15)
 
 #create entries
 oDamEnt = Entry(master, highlightbackground="#363636")
@@ -36,14 +38,14 @@ kbGrowthEnt.grid(row = 5, column = 1, sticky=W)
 kbBaseEnt.grid(row = 6, column = 1, sticky=W)
 
 # adjust window size
-master.minsize(width=1000,height=300)
+master.minsize(width=1000,height=450)
 
 # grid settings
 master.grid_columnconfigure(0, weight=1)
 master.grid_columnconfigure(1, weight=1)
 master.grid_columnconfigure(2, weight=1)
 
-# create popup menu
+# create popup menu for character choices
 var = StringVar(master)
 var.set("(Select Character)") # initial value
 
@@ -88,6 +90,8 @@ def noRageCalc(p, w, d, s, b):
     	kb = ((((p / 10.0 + ((p * d) / 20.0)) * ((200.0 / (w + 100.0)) * 1.4) + 18.0) * s) + b)
     	return kb
         
+# this function handles all of the I/O, as well as performing calculations and comparisons of knockback/percents
+
 def printKnockback():
     
     # get attributes from entries, error handling
@@ -139,6 +143,8 @@ def printKnockback():
     rage = 0
     
     return 0
+
+#dis a button
 
 button = Button(master, text="Calculate Equivalent Percent", command=printKnockback, highlightbackground="#242424")
 button.grid(row = 7, columnspan = 2, pady=5)
