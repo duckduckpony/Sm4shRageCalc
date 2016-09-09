@@ -1,6 +1,6 @@
 <snippet>
-  <content><![CDATA[
-# ${1:Sm4sh Rage Calculator}
+  <content>
+# Sm4sh Rage Calculator
 
 Hi! This project was an attempt at making life as a Smash Bros Wii U lab rat a little easier. In Smash Wii U, there is a mechanic called rage, which basically entails that as you take more damage, you also knock your opponent back further. While this can be helpful for getting KOs sometimes, a lot of players that spend a lot of time in the lab memorize percentages for certain combos and kill setups. The rage mechanic makes it difficult to predict if one of your combos or setups will still connect, because the extra knockback from rage can send the opponent out of range of the follow-up. 
 
@@ -34,6 +34,6 @@ To use, select a character you would like to test against. Fill out a damage per
 
 Credit to the folks at Kuroganehammer.com for compiling valuable move data. Formulas used in percent calculations are from www.ssbwiki.com
 
-]]></content>
+</content>
   <tabTrigger>readme</tabTrigger>
 </snippet>
