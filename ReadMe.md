@@ -9,10 +9,10 @@ This utility enables a player to determine how much effect rage is having when t
 ## Installation
 
 (Mac OS X)
-- Download the 'Sm4shCalc_OSX.zip' file and unzip. The app inside can then be dragged and dropped into your Applications folder.
+- Download the 'Sm4shCalc_OSX.zip' file from the 'Applications' folder in this repository and unzip. The app inside can then be dragged and dropped into your Applications folder.
 
 (Windows)
-- Download the 'Sm4sh Rage Calc (Win).zip' file and decompress the file. Double click the Sm4sh Rage Calc executable file to run the program. Drag the entire folder into your Program Files folder.
+- Download the 'Sm4sh Rage Calc (Win).zip' file from the 'Applications' folder in this repository and decompress the file. Double click the Sm4sh Rage Calc executable file to run the program. Drag the entire folder into your Program Files folder.
 
 ## Usage
 
